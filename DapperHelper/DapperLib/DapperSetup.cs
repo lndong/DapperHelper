@@ -14,7 +14,7 @@ namespace DapperLib
             service.AddSingleton(config);
 
             service.AddScoped<IUnitOfWork, UnitOfWork>();
-            service.AddScoped<IRepository, BaseRepository>();
+            service.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
 
             return service;
         }
