@@ -5,10 +5,10 @@ using Microsoft.Extensions.Logging;
 
 namespace DapperLib
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         // private readonly ILogger<UnitOfWork> _logger;
-        public UnitOfWork(DatabaseConfig conn/*, ILogger<UnitOfWork> logger*/)
+        public UnitOfWork(DatabaseConfig conn /*, ILogger<UnitOfWork> logger*/)
         {
             _connection = new SqlConnection(conn.ConnectString);
             // _connection.Open();
